@@ -60,7 +60,7 @@ public class PerspectiveShift : MonoBehaviour
               // disabling the rotation tracking to enable the camera to rotate to the global perspective (0, 90, 0) at the choice point
               // since the tracked pose driver is only tracking user position, movement of the camera is not registered
 
-              mainCam.transform.rotation = choicePoint.transform.rotation; // this now present the scene of the path junction with the wall
+              mainCam.transform.rotation = choicePoint.transform.rotation; // this now presents the scene of the path junction with the wall
 
               Wall.SetActive(false); // the wall game object is removed, revealing the path the pink sphere is behind
               yield return new WaitForSeconds(shiftTime);
