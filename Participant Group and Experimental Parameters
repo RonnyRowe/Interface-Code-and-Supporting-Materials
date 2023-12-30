@@ -1,0 +1,99 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using System.IO;
+
+public class ExperimentParameters : MonoBehaviour
+{
+    // define variables
+    int testNumber;
+    int functionDelay;
+    int number;
+    float shiftTime;
+    bool choicePoint;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        TestType(); // calls the function below
+    }
+
+    void TestType() // function that determines participant group and experimental parameters
+    {
+        testNumber = Random.Range(1, 3); // returns either 1 or 2 (excludes 3)
+
+        if (testNumber == 1)
+        {
+            // Debug.Log("Test number =" + " " + testNumber);
+            Debug.Log("Participant is in the Control Group");
+
+            number = Random.Range(1, 3);
+
+            if (number == 1)
+            {
+                choicePoint = true;
+                // Debug.Log("choicePoint =" + " " + number);
+                Debug.Log("Participant will face TOWARDS the choice point");
+            }
+
+            if (number == 2)
+            {
+                choicePoint = false;
+                // Debug.Log("choicePoint =" + " " + number);
+                Debug.Log("Participant will face AWAY from the choice point");
+            }
+        }
+
+        if (testNumber == 2)
+        {
+            // Debug.Log("Test number =" + " " + testNumber);
+            Debug.Log("Participant is in the Experimental Group");
+
+            number = Random.Range(1, 3);
+
+            if (number == 1)
+            {
+                functionDelay = 1;
+            }
+
+            if (number == 2)
+            {
+                functionDelay = 5;
+            }
+
+            // Debug.Log("number =" + " " + number);
+            Debug.Log("function delay =" + " " + functionDelay);
+
+            number = Random.Range(1, 3);
+
+            if (number == 1)
+            {
+                shiftTime = 0.06f;
+            }
+
+            if (number == 2)
+            {
+                shiftTime = 0.09f;
+            }
+
+            // Debug.Log("number =" + " " + number);
+            Debug.Log("shift time =" + " " + shiftTime);
+
+            number = Random.Range(1, 3);
+
+            if (number == 1)
+            {
+                choicePoint = true;
+                // Debug.Log("choicePoint =" + " " + number);
+                Debug.Log("Participant will face TOWARDS the choice point");
+            }
+
+            if (number == 2)
+            {
+                choicePoint = false;
+                // Debug.Log("choicePoint =" + " " + number);
+                Debug.Log("Participant will face AWAY from the choice point");
+            }
+          }
+      }
+  }
